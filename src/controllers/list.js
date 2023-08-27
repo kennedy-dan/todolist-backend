@@ -17,6 +17,12 @@ exports.createToDos = async (req, res) => {
 
   };
 
+  exports.getTodos = async (req, res) => {
+    //sort for latest the data to come first
+    const todos = await Lists.find().sort({ _id: -1 })
+    res.status(200).json({ todos });
+  };
+
 
   exports.updateTodos = async(req, res) => {
     try {
