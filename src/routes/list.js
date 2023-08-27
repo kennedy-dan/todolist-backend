@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { createToDos } = require("../controllers/list");
+const { createToDos, updateTodos } = require("../controllers/list");
 
 router.post("/create", createToDos);
+router.put("/update/:todo" ,updateTodos) ;
 
 
 module.exports = router;

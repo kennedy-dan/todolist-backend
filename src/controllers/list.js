@@ -16,3 +16,23 @@ exports.createToDos = async (req, res) => {
     }
 
   };
+
+
+  exports.updateTodos = async(req, res) => {
+    try {
+         const todosId = req.params.todo
+        const updatedToDos = await Lists.findOneAndUpdate(
+          { _id: todosId },
+          {todolist: req.body.todolist},        
+          { new: true }
+        );
+        console.log(updatedToDos);
+  
+        res.status(200).json(updatedToDos);
+      // }
+  
+     
+    } catch (error) {
+      console.log(error);
+    }
+  } 
