@@ -5,7 +5,6 @@ exports.connect = () => {
   env.config();
 
   const uri = process.env.MONGO_URI;
-  console.log(uri);
 
   mongodb: mongoose
     .connect(uri, {
