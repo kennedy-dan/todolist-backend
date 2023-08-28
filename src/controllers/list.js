@@ -37,7 +37,7 @@ exports.createToDos = async (req, res) => {
           {todolist: req.body.todolist},        
           { new: true }
         );
-        console.log(updatedToDos);
+       
   
         res.status(200).json(updatedToDos);
       // }
